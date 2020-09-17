@@ -1,0 +1,24 @@
+{
+  "name": "reactibook-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/josleugim/reactibook-api.git",
+  "author": "Mordekaiser <josleugim@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "dependencies": {
+    "apollo-server": "^2.17.0",
+    "apollo-server-express": "^2.17.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "graphql": "^15.3.0",
+    "graphql-tools": "^6.2.2",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.20",
+    "moment-timezone": "^0.5.31",
+    "mongoose": "^5.10.5"
+  }
+}
