@@ -13,9 +13,10 @@ schema {
 
 const userTypeDefs = require('../graphql/user/typeDefs');
 const userResolvers = require('../graphql/user/resolvers');
+const errorTypeDefs = require('../graphql/common/error/typeDefs');
 
 const schema = makeExecutableSchema({
-    typeDefs: [rootTypeDefs, userTypeDefs],
+    typeDefs: [rootTypeDefs, userTypeDefs, errorTypeDefs],
     resolvers: merge(userResolvers)
 });
 
