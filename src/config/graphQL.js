@@ -14,10 +14,12 @@ schema {
 const userTypeDefs = require('../graphql/user/typeDefs');
 const userResolvers = require('../graphql/user/resolvers');
 const errorTypeDefs = require('../graphql/common/error/typeDefs');
+const postTypeDefs = require('../graphql/post/typeDefs');
+const postResolvers = require('../graphql/post/resolvers');
 
 const schema = makeExecutableSchema({
-    typeDefs: [rootTypeDefs, userTypeDefs, errorTypeDefs],
-    resolvers: merge(userResolvers)
+    typeDefs: [rootTypeDefs, userTypeDefs, errorTypeDefs, postTypeDefs],
+    resolvers: merge(userResolvers, postResolvers)
 });
 
 module.exports = {
