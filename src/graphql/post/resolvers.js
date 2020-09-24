@@ -31,6 +31,13 @@ const postResolver = {
             return !!Post
                 .deleteOne(query)
                 .catch(() => console.log('Error at Lost Object resolver deleteOne'));
+        })),
+        updatePost: authenticated((async (root, { id, input }, context) => {
+            input.updatedAt = formatDate(moment().tz('America/Mexico_City').format());
+
+            return Post
+                .findByIdAndUpdate(id, input, { new: true })
+                .catch(e => console.error(e));
         }))
     }
 };
