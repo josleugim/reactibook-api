@@ -6,6 +6,8 @@ const typeDefs = gql`
         _id: ID!
         userId: User
         text: String
+        imageId: String
+        fullFile: String
         readAccess: ReadAccess
         createdAt: String
         updatedAt: String
@@ -28,6 +30,7 @@ const typeDefs = gql`
     input PostInput {
         text: String!
         readAccess: String!
+        imageId: String
     }
     
     extend type Mutation {

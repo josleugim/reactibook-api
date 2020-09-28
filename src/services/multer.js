@@ -6,6 +6,11 @@ const createSingle = () => {
     return destination.single('tempFile')
 };
 
+const multerMiddleware = multer({
+    storage: multer.memoryStorage()
+});
+
 module.exports = {
-    createSingle
+    createSingle,
+    multerMiddleware
 };

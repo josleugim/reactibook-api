@@ -14,6 +14,9 @@ const PostSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    imageId: {
+        type: String
+    },
     readAccess: {
         type: String,
         enum: ['friends', 'public'],
@@ -21,6 +24,10 @@ const PostSchema = new mongoose.Schema({
     },
     createdAt: { type: Date, default: formatDate(moment().tz('America/Mexico_City').format()) },
     updatedAt: { type: Date },
+});
+
+PostSchema.virtual('fullFile').get(function() {
+    return `https://storage.googleapis.com/${process.env.BUCKET}/posts/${this.imageId}`;
 });
 
 module.exports = mongoose.model('Post', PostSchema);
